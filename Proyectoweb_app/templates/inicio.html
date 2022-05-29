@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    
+  
+
+    <h3>Podes buscar un estudiante:</h3>
+
+    <form action="buscar" method="GET">
+        <p>Nombre</p>
+        <input type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+    </form>
+    
+
+    {% if estudiantes %}
+
+    <p>Estamos buscando el: {{nombre}}</p>
+
+    <ul>
+	{% for n in estudiantes %}
+		<li> {{n.nombre}}  {{n.apellido}}</li>
+        
+       
+		
+	{% endfor %}
+    </ul>
+    
+
+    {% endif %}
+
+{% endblock %}

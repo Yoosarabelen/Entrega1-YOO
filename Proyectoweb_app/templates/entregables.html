@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Entregables</h1>
+    <p>Aquí tenemos info de los entregables</p>
+
+    
+    <form action="" method="POST">{% csrf_token %}
+
+        <!-- Acá está la magia de Django-->
+        
+        <table>
+
+            {{ miFormulario.as_table }}
+
+
+        </table>
+
+
+        <input type="submit", value="Enviar">
+
+    </form>
+
+
+  
+
+{% endblock %}
